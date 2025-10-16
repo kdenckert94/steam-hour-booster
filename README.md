@@ -4,7 +4,7 @@
 
 Tired of launching games one by one just to earn a few trading cards? Steam Hour Booster is the ultimate tool for power users. Log in once, select your games, and let the app simulate "in-game" status for up to **32 games simultaneously**, skyrocketing your card-farming efficiency.
 
-![Screenshot of the main page of the booster](https://imgur.com/a/dQKx4Jz](https://i.imgur.com/4eKfXCP.png)
+![Screenshot of the main page of the booster](https://i.imgur.com/4eKfXCP.png)
 
 ## ✨ Features
 
