@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Steam Hour Booster by fatezero94</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #121212;
+      color: #ffffff;
+      padding: 2rem;
+      max-width: 400px;
+      margin: auto;
+    }
+    h1 { text-align: center; }
+    input:not([type='checkbox']), button {
+      display: block;
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      border-radius: 4px;
+      border: none;
+    }
+    button {
+      background-color: #1b6ec2;
+      color: white;
+      cursor: pointer;
+    }
+    .hidden {
+      display: none !important;
+    }
+    #spinner {
+      margin: 1rem auto;
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #1b6ec2;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      display: none;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    #dashboard {
+      display: none
+    }
+    #games {
+      max-height: 400px;
+      height: 400px;
+      width: 100%;
+      overflow: scroll;
+      scrollbar-width: none;
+    }
+    #games::-webkit-scrollbar {
+        display: none;
+    }
+    #gameSearch {
+      margin-bottom: 10px;
+    }
+    .alert{
+      background: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Steam Hour Booster</h1>
+
+  <div id="login-form">
+    <input type="text" id="username" placeholder="Username" /><br />
+    <input type="password" id="password" placeholder="Password" /><br />
+    <input type="text" id="twofactor" placeholder="2FA Code" class="hidden" /><br />
+    <button id="start-password">Login with Credentials</button>
+  </div>
+
+  <div id="dashboard">
+    <p>Here you can set a custom in-game / online status. When entering this, you can idle up to 31 games instead of 32.</p>
+    <input type="text" id="customStatus" placeholder="Set your custom status">
+    <input type="text" id="gameSearch" placeholder="Search games..." />
+    <div id="games"></div>
+    <div id="playingState"></div>
+    <button id="startIdle">Start boosting!</button>
+    <button id="stopIdle">Stop boosting!</button>
+    <button id="logout" class="alert">Logout</button>
+  </div>
+
+  <div id="spinner"></div>
+
+  <p id="result-text"></p>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

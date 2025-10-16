@@ -1,0 +1,73 @@
+{
+    "name": "steam hour booster",
+    "version": "1.0.0",
+    "description": "Electron Steam hour booster app",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron-forge start",
+        "package": "electron-forge package",
+        "make": "electron-forge make",
+        "lint": "echo \"No linting configured\""
+    },
+    "keywords": [],
+    "author": "Kevin Denckert",
+    "license": "MIT",
+    "devDependencies": {
+        "@electron-forge/cli": "^7.8.1",
+        "@electron-forge/maker-dmg": "^7.8.1",
+        "@electron-forge/maker-squirrel": "^7.8.1",
+        "@electron-forge/maker-zip": "^7.8.1",
+        "electron": "^28.2.5",
+        "electron-squirrel-startup": "^1.0.0"
+    },
+    "dependencies": {
+        "steam-session": "^1.9.3",
+        "steam-user": "5.2.3"
+    },
+    "config": {
+        "forge": {
+            "packagerConfig": {
+                "icon": "icon"
+            },
+            "makers": [
+                {
+                    "name": "@electron-forge/maker-zip",
+                    "platforms": [
+                        "win32"
+                    ]
+                },
+                {
+                    "name": "@electron-forge/maker-dmg",
+                    "platforms": [
+                        "darwin"
+                    ],
+                    "config": {
+                        "name": "SteamHourBooster"
+                    }
+                }
+            ]
+        }
+    },
+    "build": {
+        "appId": "com.steam-hour-booster.fatezero94",
+        "productName": "Steam hour booster by fatezero94",
+        "files": [
+            "**/*",
+            "!node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+            "!**/node_modules/.bin",
+            "!**/*.{map,ts,tsx,md}"
+        ],
+        "extraResources": [],
+        "directories": {
+            "output": "dist_electron"
+        },
+        "win": {
+            "target": "nsis",
+            "icon": "icon.ico"
+        },
+        "mac": {
+            "target": "dmg",
+            "icon": "icon.icns"
+        }
+    }
+}
